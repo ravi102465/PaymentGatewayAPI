@@ -46,6 +46,8 @@ namespace PaymentGatewayAPI.Controllers
             logger.LogDebug("get Payment endpoint called");
 
             //Simliar to post method validation can be done using validator but for now skipping that
+            
+            //404 not found should be done if perchant not present
             var payments = paymentService.GetPaymentListByMerchant(id);
             return Ok(new { MerchantId = id, Payments = payments });
         }
